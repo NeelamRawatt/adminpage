@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Admin from "./Admin";
+import { Button, Box } from "@mui/material";
+import { Container } from "@mui/system";
 
 function App() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="md">
+      <Box>
+        <form onSubmit={handleSubmit}>
+          <Admin />
+        </form>
+      </Box>
+    </Container>
   );
 }
 
